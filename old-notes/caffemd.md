@@ -449,20 +449,3 @@ Add `hole_h` and `hole_w`
 
 ![im2col_mod](http://www.zhenwei.science/notes/pic/im2col_mod.png "im2col in deeplab")
 
-
-<!-- Highlight syntax for Mou.app, insert at the bottom of the markdown document  -->
-
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-<script type="text/x-mathjax-config" https://cdn.mathjax.org/mathjax/latest/MathJax.js>
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
