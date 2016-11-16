@@ -1,3 +1,5 @@
-# My Awesome Book
+# Paper Reading
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+I plan to read papers and make notes in this book.
+
+Hope I can keep this book updated
