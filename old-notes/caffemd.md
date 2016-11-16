@@ -301,12 +301,12 @@ void BaseConvolutionLayer<Dtype>::forward_cpu_bias(Dtype* output,
 
 #####  Backward_cpu 
 
-$\displaystyle \nabla\_{W^{(l)}_k} J(W,b; x,y) = \sum\_{i = 1}^{m}(a_i^{(l)})* \text{rot90}(\delta_k^{(l+1)}, 2)$
+$$\displaystyle \nabla\_{W^{(l)}_k} J(W,b; x,y) = \sum\_{i = 1}^{m}(a_i^{(l)})* \text{rot90}(\delta_k^{(l+1)}, 2)$$
 
-$\displaystyle \nabla\_{b^{(l)}_k} J(W,b; x,y) = \sum\_{a, b}(\delta_k^{(l+1)})\_{a, b}$
+$$\displaystyle \nabla\_{b^{(l)}_k} J(W,b; x,y) = \sum\_{a, b}(\delta_k^{(l+1)})\_{a, b}$$
 
-$\delta_k^{(l)} = \text{upsample}\left((W_k^{(l)})^T\delta_k^{(l+1)}\right)\times f'(z_k^{(l)})$
-where $k$ indexes the filter number.
+$$\delta_k^{(l)} = \text{upsample}\left((W_k^{(l)})^T\delta_k^{(l+1)}\right)\times f'(z_k^{(l)})$$
+where $$k$$ indexes the filter number.
 
 ```
 // Bias gradient, if necessary.
@@ -441,11 +441,11 @@ Layer<Dtype*> GetMyAwesomeLayer(const LayerParameter& param) {
 
 ####   Hole algorithm  
 
-![hole_alg](http://www.zhenwei.science/notes/pic/hole_alg.png "hole algoritm")
+![hole_alg](http://cs.unc.edu/~zhenni/notes/pic/hole_alg.png "hole algoritm")
 
 ####	Implementation
 
 Add `hole_h` and `hole_w`
 
-![im2col_mod](http://www.zhenwei.science/notes/pic/im2col_mod.png "im2col in deeplab")
+![im2col_mod](http://cs.unc.edu/~zhenni/notes/pic/im2col_mod.png "im2col in deeplab")
 
