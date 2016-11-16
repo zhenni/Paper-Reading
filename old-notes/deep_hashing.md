@@ -76,7 +76,7 @@ $$
   Venice Erin Liong, Jiwen Lu, Gang Wang, Pierre Moulin, and Jie Zhou. [CVPR], 2015
   >Our model is learned under three constraints at the top layer of the deep network: 1) the loss between the original real-valued feature descriptor and the learned binary vector is minimized, 2) the binary codes distribute evenly on each bit, and 3) different bits are as independent as possible. To further improve the discriminative power of the learned binary codes, we extend DH into supervised DH (SDH) by including one discriminative term into the objective function of DH which simultaneously maximizes the inter-class variations and minimizes the intra-class variations of the learned binary codes.
   
-  1. DH Loss function: $$J = J_1 −\lambda _1J_2 +\lambda_ 2J_3 +\lambda _3J_4$$, where $$J_1 = \frac{1}{2}||B-H^M||_F^2$$ is the quantization loss, $$J_2= \frac{1}{2N} tr(H^M(H^M)^T)$$ is the balance bits constraint, $$J_3 = \frac{1}{2}\sum\limits_{m=1}^M||W^m(W^m)T-I||_F^2$$ is the independent bit constraint, and $$J_4 = \frac{1}{2}(||W^m||^2_F+||c^m||_2^2)$$ are regularizers to control scales of parameters.
+  1. DH Loss function: $$J = J_1 - \lambda _1J_2 +\lambda_ 2J_3 +\lambda _3J_4$$, where $$J_1 = \frac{1}{2}||B-H^M||_F^2$$ is the quantization loss, $$J_2= \frac{1}{2N} tr(H^M(H^M)^T)$$ is the balance bits constraint, $$J_3 = \frac{1}{2}\sum\limits_{m=1}^M||W^m(W^m)T-I||_F^2$$ is the independent bit constraint, and $$J_4 = \frac{1}{2}(||W^m||^2_F+||c^m||_2^2)$$ are regularizers to control scales of parameters.
   2. SDH (Supervised): $$J_2 = \frac{1}{2}(tr(\frac{1}{N}H^M(H^M)^T)+ \alpha tr(\Sigma_B-\Sigma_W))$$,
   where $$\displaystyle\Sigma_W=\frac{1}{N_S}\sum\limits_{(x_i, x_j)\in\mathcal{S}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$$, $$\displaystyle\Sigma_B=\frac{1}{N_D}\sum\limits_{(x_i, x_j)\in\mathcal{D}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$$, and two sets $$\mathcal{S}$$  or $$\mathcal{D}$$ from the training set, which represents the positive samples pairs and the negative samples pairs in the training set, respectively.
   <img src="http://cs.unc.edu/~zhenni/blog/notes/images/DH.png" width = "400" alt="DH" align=center />
@@ -91,7 +91,7 @@ $$
 - **(DPSH) Feature Learning based Deep Supervised Hashing with Pairwise Labels** [[paper](http://arxiv.org/pdf/1511.03855v1.pdf)][[code](http://cs.nju.edu.cn/lwj/code/DPSH_code.rar)]  
   Wu-Jun Li, Sheng Wang and Wang-Cheng Kang. [arXiv], 2015
   
-  1. Define the pairwise loss function similar to that of LFH: $$\displaystyle L = −\log p(\mathcal{S}|\mathcal{B}) = − 􏰀 \log p(\mathcal{s}_{ij}|\mathcal{B}) = -\sum\limits_{\mathcal{s}_{ij}\in\mathcal{S}} (\mathcal{s}_{ij}\theta_{ij} − \log(1 + e^{\theta_{ij}} ))$$, where $$\mathcal{B}=\{b_i\}^n_{i=1},\theta_{ij}=\frac{1}{2}b^T_ib_j$$
+  1. Define the pairwise loss function similar to that of LFH: $$\displaystyle L = -\log p(\mathcal{S}|\mathcal{B}) = - \log p(\mathcal{s}_{ij}|\mathcal{B}) = -\sum\limits_{\mathcal{s}_{ij}\in\mathcal{S}} (\mathcal{s}_{ij}\theta_{ij} - \log(1 + e^{\theta_{ij}} ))$$, where $$\mathcal{B}=\{b_i\}^n_{i=1},\theta_{ij}=\frac{1}{2}b^T_ib_j$$
   2. Compute the derivatives of the loss function with respect to the (relaxed) hash codes as follows: $$\displaystyle \frac{\partial L}{\partial u_i} = \frac{1}{2}\sum\limits_{j:s_{ij}\in\mathcal{S}}(a_{ij}-s{ij})u_j + \frac{1}{2}\sum\limits_{j:s_{ji}\in\mathcal{S}}(a_{ji}-s{ji})u_j$$, where $$a_{ij} = \sigma(\frac{1}{2}u_i^Tu_j)$$ with $$\sigma(x)=\frac{1}{1+e^{-x}}$$
   
   ![DPSH](http://cs.unc.edu/~zhenni/blog/notes/images/DPSH.png)
