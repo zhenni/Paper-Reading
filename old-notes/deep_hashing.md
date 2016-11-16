@@ -60,7 +60,13 @@ Yoonseop Kang, Saehoon Kim, Seungjin Choi. [ACMMM], 2012
  2. Semantic Ranking Supervision: (preserve multilevel semantic structure)various evaluation criteria can be used to measure the consistency of the rankings predicted by hash functions, such as the Normalized Discounted Cu- mulative Gain (NDCG) score: $$\displaystyle NDCG@p=\frac{1}{Z}\sum\limits_{i=1}^{p}\frac{2^{r_i}-1}{\log(1+i)}$$, where $$p$$ is the truncated position in a ranking list, $$Z$$ is a normalization constant to ensure that the NDCG score for the correct ranking is one, and $$r_i$$ is the similarity level of the $$i$$-th database point in the ranking list.
  3. Optimization with Surrogate Loss:  
  Given a query $q$ and a ranking list $$\{x_i\}^M_{i=1}$$ for $$q$$, we can define a ranking loss on a set of triplets of hash codes as follows: $$\displaystyle L_\omega(h(q),\{h(x_i)\}^M_{i=1})=\sum\limits_{i=1}^M\sum\limits_{j:r_j<r_i}\omega(r_i, r_j)[d_H(h(q), h(x_i)) - d_H(h(q), h(x_j))+\rho]_+$$. According to NDCD, weight $$\omega(r_i, r_j)= \frac{2^{r_i}-2^{r_j}}{Z}$$    
- The objective function can be given by the empirical loss subject to some regularization: $$\displaystyle\mathcal{F}(W)=\sum\limits_{q\in\mathcal{D}, \{x_i\}_{i=1}^M\subset\mathcal{D}}L_{\omega}(h(q;W),\{h(x_i;W)\}^M_{i=1}) + \frac{\alpha}{2}||mean\limits_{q}(h(q;W))||_2^2 + \frac{\beta}{2}||W||_2^2$$  
+ The objective function can be given by the empirical loss subject to some regularization: 
+
+$$
+\mathcal{F}(W)=\sum\limits_{q\in\mathcal{D}, \{x_i\}_{i=1}^M\subset\mathcal{D}}L_{\omega} ( h(q;W) , \{h(x_i;W) \} ^M_{i=1}) +  \frac{\alpha}{2} || \mathop{mean}\limits_{q}(h(q;W))||_2^2 + \frac{\beta}{2}||W||_2^2
+$$
+
+  
  And calculate derivative values.
  
  <img src="http://cs.unc.edu/~zhenni/blog/notes/images/DSRH.png" width = "400" alt="DSRH" align=center />
@@ -72,7 +78,7 @@ Yoonseop Kang, Saehoon Kim, Seungjin Choi. [ACMMM], 2012
   
   1. DH Loss function: $$J = J_1 −\lambda_1J_2 +\lambda_2J_3 +\lambda_3J_4$$, where $$J_1 = \frac{1}{2}||B-H^M||_F^2$$ is the quantization loss, $$J_2= \frac{1}{2N}\mathop{tr}(H^M(H^M)^T)$$ is the balance bits constraint, $$J_3 = \frac{1}{2}\sum\limits_{m=1}^M||W^m(W^m)T-I||_F^2$$ is the independent bit constraint, and $$J_4 = \frac{1}{2}(||W^m||^2_F+||c^m||_2^2)$$ are regularizers to control scales of parameters.
   2. SDH (Supervised): $$J_2 = \frac{1}{2}(\mathop{tr}(\frac{1}{N}H^M(H^M)^T)+ \alpha\mathop{tr}(\Sigma_B-\Sigma_W))$$,
-  where $$\displaystyle\Sigma_W=\frac{1}{N_S}\sum\limits_{(x_i, x_j)\in\mathcal{S}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$, $\displaystyle\Sigma_B=\frac{1}{N_D}\sum\limits_{(x_i, x_j)\in\mathcal{D}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$$, and two sets $$\mathcal{S}$$ or $$\mathcal{D}$$ from the training set, which represents the positive samples pairs and the negative samples pairs in the training set, respectively.
+  where $$\displaystyle\Sigma_W=\frac{1}{N_S}\sum\limits_{(x_i, x_j)\in\mathcal{S}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$$, $$\displaystyle\Sigma_B=\frac{1}{N_D}\sum\limits_{(x_i, x_j)\in\mathcal{D}}(h_i^M-h_j^M)(h_i^M-h_j^M)^T$$, and two sets $$\mathcal{S}$$  or $$\mathcal{D}$$ from the training set, which represents the positive samples pairs and the negative samples pairs in the training set, respectively.
   <img src="http://cs.unc.edu/~zhenni/blog/notes/images/DH.png" width = "400" alt="DH" align=center />
   <img src="http://cs.unc.edu/~zhenni/blog/notes/images/DH-alg.png" width = "400" alt="DH-alg" align=center />
   <img src="http://cs.unc.edu/~zhenni/blog/notes/images/SDH-alg.png" width = "400" alt="SDH-alg" align=center />  
