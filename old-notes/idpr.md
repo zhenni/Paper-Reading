@@ -8,7 +8,7 @@ project homepage: [http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimati
 - $$\mathcal{G} = (\mathcal{V}, \mathcal{E})$$
 - $$\mathcal{V}$$ : the point of the joints(parts).
 - $$\mathcal{E}$$ : spatial relation between the joints(parts).
-- $$K = |\mathcal{V}|$$, simply regard as $K$-node tree.
+- $$K = |\mathcal{V}|$$, simply regard as $$K$$-node tree.
 - $$l_i = (x, y)$$ - locations : pixel location of each part $$i$$.
 - $$t_{ij} \in \{1, 2, ..., T_{ij}\}$$ - types : a mixture of different spatial relationships. 
   $$t = \{t_{ij}, t_{ji} | (i, j) \in \mathcal{E}\}$$ : set of spatial relations 
