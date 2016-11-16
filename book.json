@@ -5,7 +5,8 @@
         "disqus",
         "exercises",
         "katex-full",
-        "mathjax"
+        "mathjax",
+        "mathjax-full"
     ],
     "pluginsConfig": {
         "disqus": {
