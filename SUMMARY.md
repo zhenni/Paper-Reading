@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [Old Notes](old-notes.md)
-   * Caffe
+   * [Caffe](old-notes/caffe.md)
 
