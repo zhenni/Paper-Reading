@@ -1,7 +1,8 @@
 {
     "plugins": [
         "katex",
-        "youtube"
+        "youtube",
+        "disqus"
     ],
     "pluginsConfig": {}
 }
