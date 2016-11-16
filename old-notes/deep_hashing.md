@@ -30,10 +30,10 @@ Yoonseop Kang, Saehoon Kim, Seungjin Choi. [ACMMM], 2012
 
 - **(CNNH) Supervised Hashing via Image Representation Learning** [[paper](http://ss.sysu.edu.cn/%7Epy/papers/AAAI-CNNH.pdf)][[code](http://ss.sysu.edu.cn/%7Epy/CNNH/cnnh.html)][[slide](http://ss.sysu.edu.cn/%7Epy/CNNH-slides.pdf)]  
   Rongkai Xia, Yan Pan, Hanjiang Lai, Cong Liu, and Shuicheng Yan. [AAAI], 2014 
->1.Given the pairwise similarity matrix $$S$$ over training images, they use a scalable coordinate descent method to decompose $$S$$ into a product of $$HH^T$$ where $H$ is a matrix with each of its rows being the approximate hash code associated to a training image.
+>1.Given the pairwise similarity matrix $$S$$ over training images, they use a scalable coordinate descent method to decompose $$S$$ into a product of $$HH^T$$ where $$H$$ is a matrix with each of its rows being the approximate hash code associated to a training image.
 
  <img src="http://cs.unc.edu/~zhenni/blog/notes/images/CNNH-stage1.png" width = "400" alt="CNNH-stage1" align=center />
->2.In the second stage, the idea is to simultaneously learn a good feature representation for the input images as well as a set of hash functions, via a deep convolutional network tailored to the learned hash codes in $H$ and optionally the discrete class labels of the images. (Using Alexnet)
+>2.In the second stage, the idea is to simultaneously learn a good feature representation for the input images as well as a set of hash functions, via a deep convolutional network tailored to the learned hash codes in $$H$$ and optionally the discrete class labels of the images. (Using Alexnet)
  
  ![CNNH](http://cs.unc.edu/~zhenni/blog/notes/images/CNNH.png)
 
@@ -59,7 +59,7 @@ Yoonseop Kang, Saehoon Kim, Seungjin Choi. [ACMMM], 2012
  1. Deep Hash Functions: $$\displaystyle h(x; w) = sign(w^T[f_a(x); f_b(x)])$$  
  2. Semantic Ranking Supervision: (preserve multilevel semantic structure)various evaluation criteria can be used to measure the consistency of the rankings predicted by hash functions, such as the Normalized Discounted Cu- mulative Gain (NDCG) score: $$\displaystyle NDCG@p=\frac{1}{Z}\sum\limits_{i=1}^{p}\frac{2^{r_i}-1}{\log(1+i)}$$, where $$p$$ is the truncated position in a ranking list, $$Z$$ is a normalization constant to ensure that the NDCG score for the correct ranking is one, and $$r_i$$ is the similarity level of the $$i$$-th database point in the ranking list.
  3. Optimization with Surrogate Loss:  
- Given a query $q$ and a ranking list $$\{x_i\}^M_{i=1}$$ for $$q$$, we can define a ranking loss on a set of triplets of hash codes as follows: $$\displaystyle L_\omega(h(q),\{h(x_i)\}^M_{i=1})=\sum\limits_{i=1}^M\sum\limits_{j:r_j<r_i}\omega(r_i, r_j)[d_H(h(q), h(x_i)) - d_H(h(q), h(x_j))+\rho]_+$$. According to NDCD, weight $$\omega(r_i, r_j)= \frac{2^{r_i}-2^{r_j}}{Z}$$    
+ Given a query $$q$$ and a ranking list $$\{x_i\}^M_{i=1}$$ for $$q$$, we can define a ranking loss on a set of triplets of hash codes as follows: $$\displaystyle L_\omega(h(q),\{h(x_i)\}^M_{i=1})=\sum\limits_{i=1}^M\sum\limits_{j:r_j<r_i}\omega(r_i, r_j)[d_H(h(q), h(x_i)) - d_H(h(q), h(x_j))+\rho]_+$$. According to NDCD, weight $$\omega(r_i, r_j)= \frac{2^{r_i}-2^{r_j}}{Z}$$    
  The objective function can be given by the empirical loss subject to some regularization: 
 
 $$
