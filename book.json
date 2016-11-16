@@ -1,7 +1,13 @@
 {
     "plugins": [
-        "mathjax",
-        "katex"
+        "katex",
+        "youtube",
+        "disqus",
+        "exercises"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "zhenni"
+        }
+    }
 }
