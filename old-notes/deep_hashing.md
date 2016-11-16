@@ -84,7 +84,7 @@ $$
   <img src="http://cs.unc.edu/~zhenni/blog/notes/images/SDH-alg.png" width = "400" alt="SDH-alg" align=center />  
 - **Deep Learning of Binary Hash Codes for Fast Image Retrieval** [[paper](http://www.iis.sinica.edu.tw/%7Ekevinlin311.tw/cvprw15.pdf)][[code](https://github.com/kevinlin311tw/caffe-cvprw15)][[questions](http://www.iis.sinica.edu.tw/%7Ekevinlin311.tw/deephash_questions.txt)]  
   Kevin Lin, Huei-Fang Yang, Jen-Hao Hsiao, and Chu-Song Chen. [CVPRW], 2015
-  1. Learning Hash-like Binary Codes: Add a latent layer $H$  between $$F_7$$ and $$F_8$$ to represent the hash code layer. The neurons in the latent layer H are activated by sigmoid functions.The initial random weights of latent layer $H$ acts like LSH.
+  1. Learning Hash-like Binary Codes: Add a latent layer $$H$$  between $$F_7$$ and $$F_8$$ to represent the hash code layer. The neurons in the latent layer H are activated by sigmoid functions.The initial random weights of latent layer $H$ acts like LSH.
   2. Coarse-level Search: The binary codes are then obtained by binarizing the activations by a threshold. (1, if $$\geq 0.5$$, 0, $$o.w.$$). Then we can get a pool of candidates.
   3. Fine-level Search: Use the euclidean distances of $$F_7$$ layer feature.
   ![img](http://cs.unc.edu/~zhenni/blog/notes/images/Kevin.png)
