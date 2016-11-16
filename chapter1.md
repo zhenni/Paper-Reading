@@ -1,3 +1,3 @@
-# First Chapter
+# Old Notes
 
-GitBook allows you to organize your book into chapters, each chapter is stored in a separate file like this one.
+There are some notes taken before creating this book.
