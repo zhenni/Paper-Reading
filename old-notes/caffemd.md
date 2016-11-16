@@ -25,16 +25,16 @@ vision_layers.hpp
 ```
 其中`layer.hpp`是抽象出来的基类，其他都是在其基础上的继承，也即剩下的五个头文件。在`layer.hpp`头文件里，包含了这几个头文件：
 
-```
+```cpp
 #include "caffe/blob.hpp"
 #include "caffe/common.hpp"
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/util/device_alternate.hpp"
 ```
 
-在device_alternate.hpp中，通过#ifdef CPU_ONLY定义了一些宏来取消GPU的调用：
+在device_alternate.hpp中，通过`#ifdef CPU_ONLY`定义了一些宏来取消GPU的调用：
 
-```
+```cpp
 #define STUB_GPU(classname)
 #define STUB_GPU_FORWARD(classname, funcname)
 #define STUB_GPU_BACKWARD(classname, funcname)
@@ -42,7 +42,7 @@ vision_layers.hpp
 
 layer中有这三个主要参数：
 
-```
+```cpp
 LayerParameter layer_param_;                // 这个是protobuf文件中存储的layer参数
 vector<share_ptr<Blob<Dtype>>> blobs_;      // 这个存储的是layer的参数，在程序中用的
 vector<bool> param_propagate_down_;         // 这个bool表示是否计算各个blob参数的diff，即传播误差
@@ -51,7 +51,7 @@ vector<bool> param_propagate_down_;         // 这个bool表示是否计算各�
 Layer类的构建函数`explicit Layer(const LayerParameter& param) : layer_param_(param)`会尝试从protobuf文件读取参数。( The only thing we do is to copy blobs if there are any. )
 其三个主要接口：
 
-```
+```cpp
 virtual void SetUp(const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top)
 inline Dtype Forward(const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top);
 inline void Backward(const vector<Blob<Dtype>*>& top, const vector<bool>& propagate_down, const <Blob<Dtype>*>* bottom);
@@ -65,7 +65,7 @@ inline void Backward(const vector<Blob<Dtype>*>& top, const vector<bool>& propag
 ####  data_layers.hpp 
 data_layers.hpp这个头文件包含了这几个头文件：
 
-```
+```cpp
 #include "boost/scoped_ptr.hpp"
 #include "hdf5.h"
 #include "leveldb/db.h"
@@ -89,7 +89,7 @@ data_layers.hpp这个头文件包含了这几个头文件：
 
 `caffe/filler.hpp`的作用是在网络初始化时，根据layer的定义进行初始参数的填充，下面的代码很直观，根据`FillerParameter`指定的类型进行对应的参数填充。
 
-```
+```cpp
 // A function to get a specific filler from the specification given in
 // FillerParameter. Ideally this would be replaced by a factory pattern,
 // but we will leave it this way for now.
@@ -132,7 +132,7 @@ Filler<Dtype>* GetFiller(const FillerParameter& param) {
 
 `caffe_cpu_gemm` : C &larr; &alpha;A &times; B + &beta;C 
 
-```
+```cpp
 // A: M*K; B: K*N; C : M*N
 template <typename Dtype>
 void caffe_cpu_gemm(const CBLAS_TRANSPOSE TransA,
@@ -142,7 +142,7 @@ void caffe_cpu_gemm(const CBLAS_TRANSPOSE TransA,
 ```
 `caffe_cpu_gemv`: Y &larr; &alpha;AX + &beta;Y
 
-```
+```cpp
 // A: M*N; X: N*1; Y: M*1
 void caffe_cpu_gemv<float>(const CBLAS_TRANSPOSE TransA, const int M,
     const int N, const float alpha, const float* A, const float* x,
@@ -164,7 +164,7 @@ variables:
 
 #####  Forward_cpu 
 
-```
+```cpp
 // y <- wx (y <- xw')
 caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasTrans, M_, N_, K_, (Dtype)1.,
       bottom_data, weight, (Dtype)0., top_data);
@@ -177,22 +177,23 @@ caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasTrans, M_, N_, K_, (Dtype)1.,
 ```
 
 #####  Backward_cpu 
-- top_diff: $\delta^{(l+1)}$
-- bottom_data: $a^{(l)}$
-- this->blobs_[0]->mutable_cpu_diff(): $\Delta W^{(l)}$
-- this->blobs_[1]->mutable_cpu_diff(): $\Delta b^{(l)}$
-- bottom[0]->mutable_cpu_diff(): $\delta^{(l)}$
+- top_diff: $$\delta^{(l+1)}$$
+- bottom_data: $$a^{(l)}$$
+- this->blobs_[0]->mutable_cpu_diff(): $$\Delta W^{(l)}$$
+- this->blobs_[1]->mutable_cpu_diff(): $$\Delta b^{(l)}$$
+- bottom[0]->mutable_cpu_diff(): $$\delta^{(l)}$$
 
-- Update $\Delta W^{(l)}$ : $ \displaystyle \Delta W^{(l)} = \Delta W^{(l)} + \nabla\_{W^{(l)}} J(W,b; x,y) = \Delta W^{(l)} + \delta^{(l+1)}(a^{(l)})^T$ 
-$\displaystyle \frac{\partial}{\partial W_{ij}^{(l)}} J(W,b; x,y) = a_j^{(l)}\delta_i^{(l+1)}$
+- Update $$\Delta W^{(l)}$$ : $$ \displaystyle \Delta W^{(l)} = \Delta W^{(l)} + \nabla\_{W^{(l)}} J(W,b; x,y) = \Delta W^{(l)} + \delta^{(l+1)}(a^{(l)})^T$$ 
+$$\displaystyle \frac{\partial}{\partial W_{ij}^{(l)}} J(W,b; x,y) = a_j^{(l)}\delta_i^{(l+1)}$$
 
-```
+```cpp
 // Gradient with respect to weight
 caffe_cpu_gemm<Dtype>(CblasTrans, CblasNoTrans, N_, K_, M_, (Dtype)1.,
     top_diff, bottom_data, (Dtype)0., this->blobs_[0]->mutable_cpu_diff());
 ```
-- Update $\Delta b^{(l)}$ : $\displaystyle \Delta b^{(l)} = \Delta b^{(l)} + \nabla\_{b^{(l)}} J(W,b; x,y) = \Delta b^{(l)} + \delta^{(l+1)}$   
-$\displaystyle \frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x,y) = \delta_i^{(l+1)}$
+
+- Update $$\Delta b^{(l)}$$ : $$\displaystyle \Delta b^{(l)} = \Delta b^{(l)} + \nabla\_{b^{(l)}} J(W,b; x,y) = \Delta b^{(l)} + \delta^{(l+1)}$$   
+$$\displaystyle \frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x,y) = \delta_i^{(l+1)}$$
 
 ```
 // Gradient with respect to bias
@@ -385,7 +386,7 @@ Differences between deconvoluntion layer and convolution layer:
 Forward: change `forward_cpu_gemm` to `backward_cpu_gemm`
 Backward: change `backward_cpu_gemm` to `forward_cpu_gemm`
 
-```
+```cpp
 this->backward_cpu_gemm(bottom_data + bottom[i]->offset(n), weight,
           top_data + top[i]->offset(n));
 this->forward_cpu_gemm(top_diff + top[i]->offset(n), weight,
