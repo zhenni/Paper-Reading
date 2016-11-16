@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* [Old Notes](chapter1.md)
+* [Old Notes](old-notes.md)
 
