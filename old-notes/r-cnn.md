@@ -103,8 +103,8 @@ Tree transformations:(VGG 16)
  - Joint optimaize a softmax classifier and bounding-box regressors
  - __Multi-task Loss__
      - Two sibling output layers:
-       1. fc + (K+1)-softmax: Discrete probability distribution per RoI $p = (p_0, .., p_K)$
-       2. fc + bbox regressor: bbox regression offsets $t^k = (t^k_x, t^k_y, t^k_w, t^k_h)$, $t^k$: a scale -invariant translation and log-space height-width shift relative to an object proposal
+       1. fc + (K+1)-softmax: Discrete probability distribution per RoI $$p = (p_0, .., p_K)$$
+       2. fc + bbox regressor: bbox regression offsets $$t^k = (t^k_x, t^k_y, t^k_w, t^k_h)$$, $$t^k$$: a scale -invariant translation and log-space height-width shift relative to an object proposal
      - Multi-task loss $$L(p, k^*, t, t^*) = L_{cls}(p, k^*) + \lambda[k^* \geq 1]L_{loc}(t, t^*)$$
      where $$k^*$$ is the true class label
        1. $$L_{cls}(p, k^*) = -\log p_{k^*}$$ : standard cross entropy/log loss
