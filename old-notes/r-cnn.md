@@ -109,9 +109,9 @@ Tree transformations:(VGG 16)
      where $$k^*$$ is the true class label
        1. $$L_{cls}(p, k^*) = -\log p_{k^*}$$ : standard cross entropy/log loss
        2. $$L_{loc}$$ : $$t^* = (t^*_x, t^*_y, t^*_w, t^*_h)$$ true bbox regression target $$t = (t_x, t_y, t_w, t_h)$$  predicted tuple for class $$k$$ $$L_{loc}(t, t^*) = \sum_{i \in \{x,y,w,h\}} \text{smooth}_{L_1}(t_i, t_i^*)$$
-       3.  $$\text{smooth}_{L_1}(x) = \left\{ \begin{array}[cc] \text{0.5}x^2 & \text{if}|x|<1\\|x|-0.5 & \text{otherwise}\end{array}\right.$$
+       3.  $$\text{smooth}_{L_1}(x) = \left\{ \begin{matrix} \text{0.5}x^2 & \text{if}|x|<1\\|x|-0.5 & \text{otherwise}\end{matrix}\right.$$
        smoothed $$L_1$$ loss : less sensitive to outliers (R-CNN L2 loss: requires significant tuning of learning rate, prevent exploding gradients)
-      3. hyper-parameter: $$\lambda$$ (=1) normalize $t^*$ to zero mean and unit variance
+      3. hyper-parameter: $$\lambda$$ (=1) normalize $$t^*$$ to zero mean and unit variance
      - __Mini-batch Sampling__
       - 128: 2 randomly sampled images with 64 PoI sampled from each image
       - 25% positive: IoU > 0.5
