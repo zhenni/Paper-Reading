@@ -7,5 +7,5 @@
    * [Fully Convoluntional Networks for Segmentaion Segmentation](old-notes/fcn.md)
    * [Simultaneous Detection and Segmentation](old-notes/sds.md)
    * [R-CNN & Fast R-CNN & Faster R-CNN](old-notes/r-cnn.md)
-   * Survey of Deep Hashing
+   * [Survey of Deep Hashing](old-notes/deep_hashing.md)
 
