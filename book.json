@@ -3,7 +3,8 @@
         "katex",
         "youtube",
         "disqus",
-        "exercises"
+        "exercises",
+        "katex-full"
     ],
     "pluginsConfig": {
         "disqus": {
