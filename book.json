@@ -4,7 +4,8 @@
         "youtube",
         "disqus",
         "exercises",
-        "katex-full"
+        "katex-full",
+        "mathjax"
     ],
     "pluginsConfig": {
         "disqus": {
