@@ -8,5 +8,5 @@
    * [Simultaneous Detection and Segmentation](old-notes/sds.md)
    * [R-CNN & Fast R-CNN & Faster R-CNN](old-notes/r-cnn.md)
    * [Survey of Deep Hashing](old-notes/deep_hashing.md)
-   * Learning Dense Correspondence via 3D-guided Cycle Consistency
+   * [Learning Dense Correspondence via 3D-guided Cycle Consistency](old-notes/dense-corr-cycle-consistency.md)
 
