@@ -195,16 +195,16 @@ caffe_cpu_gemm<Dtype>(CblasTrans, CblasNoTrans, N_, K_, M_, (Dtype)1.,
 - Update $$\Delta b^{(l)}$$ : $$\displaystyle \Delta b^{(l)} = \Delta b^{(l)} + \nabla\_{b^{(l)}} J(W,b; x,y) = \Delta b^{(l)} + \delta^{(l+1)}$$   
 $$\displaystyle \frac{\partial}{\partial b_{i}^{(l)}} J(W,b; x,y) = \delta_i^{(l+1)}$$
 
-```
+```cpp
 // Gradient with respect to bias
 caffe_cpu_gemv<Dtype>(CblasTrans, M_, N_, (Dtype)1., top_diff,
     bias_multiplier_.cpu_data(), (Dtype)0.,
     this->blobs_[1]->mutable_cpu_diff());
 ```
-- Update $\delta^{(l)}$ : $\displaystyle \delta^{(l)} = \left((W^{(l)})^T \delta^{(l+1)}\right)\times f'(z^{(l)})$.   	·
-$f'(\cdot)$ implemented in `reluLayer`
+- Update $$\delta^{(l)}$$ : $$\displaystyle \delta^{(l)} = \left((W^{(l)})^T \delta^{(l+1)}\right)\times f'(z^{(l)})$$.   
+$$f'(\cdot)$$ implemented in `reluLayer`
 
-```
+```cpp
 // Gradient with respect to bottom data
 caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasNoTrans, M_, K_, N_, (Dtype)1.,
     top_diff, this->blobs_[0]->cpu_data(), (Dtype)0.,
@@ -217,11 +217,13 @@ caffe_cpu_gemm<Dtype>(CblasNoTrans, CblasNoTrans, M_, K_, N_, (Dtype)1.,
 Tutorial: [http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/](http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/)
 
 Using `im2col` to convert the images to a matrix(columns). Computation becomes multiplication pf matrices.
-![im2col](http://img.blog.csdn.net/20150817192642831 "im2col")
-![im2col2](http://img.blog.csdn.net/20150817192827360 "im2col")
+
+![](im2col.png)
+
+![](im2col2.png)
 
 
-```
+```cpp
 template <typename Dtype>
 void im2col_cpu(const Dtype* data_im, const int channels,
         const int height, const int width, const int kernel_h, const int kernel_w,
@@ -258,7 +260,7 @@ After using `im2col` function, it is similar as Innerproduct Layer
 
 #####  Forward_cpu 
 
-```
+```cpp
 for (int n = 0; n < this->num_; ++n) {
     this->forward_cpu_gemm(bottom_data + bottom[i]->offset(n), weight,
         top_data + top[i]->offset(n));
@@ -269,7 +271,7 @@ for (int n = 0; n < this->num_; ++n) {
 }
 ```
 
-```
+```cpp
 template <typename Dtype>
 void BaseConvolutionLayer<Dtype>::forward_cpu_gemm(const Dtype* input,
     const Dtype* weights, Dtype* output, bool skip_im2col) {
@@ -290,7 +292,7 @@ void BaseConvolutionLayer<Dtype>::forward_cpu_gemm(const Dtype* input,
 ```
 
 
-```
+```cpp
 template <typename Dtype>
 void BaseConvolutionLayer<Dtype>::forward_cpu_bias(Dtype* output,
     const Dtype* bias) {
@@ -309,7 +311,7 @@ $$\displaystyle \nabla\_{b^{(l)}_k} J(W,b; x,y) = \sum\_{a, b}(\delta_k^{(l+1)})
 $$\delta_k^{(l)} = \text{upsample}\left((W_k^{(l)})^T\delta_k^{(l+1)}\right)\times f'(z_k^{(l)})$$
 where $$k$$ indexes the filter number.
 
-```
+```cpp
 // Bias gradient, if necessary.
 if (this->bias_term_ && this->param_propagate_down_[1]) {
     Dtype* bias_diff = this->blobs_[1]->mutable_cpu_diff();
@@ -331,7 +333,7 @@ for (int n = 0; n < this->num_; ++n) {
 }
 ```
 
-```
+```cpp
 template <typename Dtype>
 void BaseConvolutionLayer<Dtype>::backward_cpu_bias(Dtype* bias,
     const Dtype* input) {
