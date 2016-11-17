@@ -1,0 +1,15 @@
+{
+    "plugins": [
+        "katex",
+        "youtube",
+        "disqus",
+        "exercises",
+        "tags",
+        "etoc"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "zhenni"
+        }
+    }
+}

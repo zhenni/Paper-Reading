@@ -1,0 +1,120 @@
+{
+  "_args": [
+    [
+      {
+        "name": "lodash",
+        "raw": "lodash@3.0.1",
+        "rawSpec": "3.0.1",
+        "scope": null,
+        "spec": "3.0.1",
+        "type": "version"
+      },
+      "/Users/zhenni/Notes/paper-reading/node_modules/gitbook-plugin-exercises"
+    ]
+  ],
+  "_cnpm_publish_time": 1422610431621,
+  "_from": "lodash@3.0.1",
+  "_id": "lodash@3.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/lodash",
+  "_nodeVersion": "0.10.35",
+  "_npmUser": {
+    "email": "john.david.dalton@gmail.com",
+    "name": "jdalton"
+  },
+  "_npmVersion": "2.3.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "lodash",
+    "raw": "lodash@3.0.1",
+    "rawSpec": "3.0.1",
+    "scope": null,
+    "spec": "3.0.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/gitbook-plugin-exercises"
+  ],
+  "_resolved": "http://r.cnpmjs.org/lodash/download/lodash-3.0.1.tgz",
+  "_shasum": "14d49028a38bc740241d11e2ecd57ec06d73c19a",
+  "_shrinkwrap": null,
+  "_spec": "lodash@3.0.1",
+  "_where": "/Users/zhenni/Notes/paper-reading/node_modules/gitbook-plugin-exercises",
+  "author": {
+    "email": "john.david.dalton@gmail.com",
+    "name": "John-David Dalton",
+    "url": "http://allyoucanleet.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lodash/lodash/issues"
+  },
+  "contributors": [
+    {
+      "email": "john.david.dalton@gmail.com",
+      "name": "John-David Dalton",
+      "url": "http://allyoucanleet.com/"
+    },
+    {
+      "email": "demoneaux@gmail.com",
+      "name": "Benjamin Tan",
+      "url": "https://d10.github.io/"
+    },
+    {
+      "email": "blaine@iceddev.com",
+      "name": "Blaine Bublitz",
+      "url": "http://www.iceddev.com/"
+    },
+    {
+      "email": "github@kitcambridge.be",
+      "name": "Kit Cambridge",
+      "url": "http://kitcambridge.be/"
+    },
+    {
+      "email": "mathias@qiwi.be",
+      "name": "Mathias Bynens",
+      "url": "https://mathiasbynens.be/"
+    }
+  ],
+  "dependencies": {},
+  "description": "The modern build of lodash modular utilities.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "14d49028a38bc740241d11e2ecd57ec06d73c19a",
+    "size": 153207,
+    "tarball": "http://r.cnpmjs.org/lodash/download/lodash-3.0.1.tgz"
+  },
+  "homepage": "https://lodash.com/",
+  "icon": "https://lodash.com/icon.svg",
+  "keywords": [
+    "modules",
+    "stdlib",
+    "util"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "john.david.dalton@gmail.com",
+      "name": "jdalton"
+    },
+    {
+      "email": "mathias@qiwi.be",
+      "name": "mathias"
+    }
+  ],
+  "name": "lodash",
+  "optionalDependencies": {},
+  "publish_time": 1422610431621,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodash/lodash.git"
+  },
+  "scripts": {
+    "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+  },
+  "version": "3.0.1"
+}

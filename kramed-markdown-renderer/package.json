@@ -1,0 +1,90 @@
+{
+  "_args": [
+    [
+      {
+        "name": "kramed-markdown-renderer",
+        "raw": "kramed-markdown-renderer@0.1.1",
+        "rawSpec": "0.1.1",
+        "scope": null,
+        "spec": "0.1.1",
+        "type": "version"
+      },
+      "/Users/zhenni/Notes/paper-reading/node_modules/gitbook-plugin-exercises"
+    ]
+  ],
+  "_cnpm_publish_time": 1422897436834,
+  "_from": "kramed-markdown-renderer@0.1.1",
+  "_id": "kramed-markdown-renderer@0.1.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/kramed-markdown-renderer",
+  "_npmUser": {
+    "email": "aaron.omullan@gmail.com",
+    "name": "aarono"
+  },
+  "_npmVersion": "1.4.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "kramed-markdown-renderer",
+    "raw": "kramed-markdown-renderer@0.1.1",
+    "rawSpec": "0.1.1",
+    "scope": null,
+    "spec": "0.1.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/gitbook-plugin-exercises"
+  ],
+  "_resolved": "http://r.cnpmjs.org/kramed-markdown-renderer/download/kramed-markdown-renderer-0.1.1.tgz",
+  "_shasum": "0c794314ac0e79c905e67b5c1cc566db288a0383",
+  "_shrinkwrap": null,
+  "_spec": "kramed-markdown-renderer@0.1.1",
+  "_where": "/Users/zhenni/Notes/paper-reading/node_modules/gitbook-plugin-exercises",
+  "author": {
+    "email": "aaron.omullan@gmail.com",
+    "name": "Aaron O'Mullan"
+  },
+  "bugs": {
+    "url": "https://github.com/GitbookIO/kramed-markdown-renderer/issues"
+  },
+  "dependencies": {},
+  "description": "Renderer for kramed outputting markdown (useful for lexing markdown documents to modify them and then re-render them).",
+  "devDependencies": {
+    "kramed": "0.4.4",
+    "mocha": "1.18.2"
+  },
+  "directories": {},
+  "dist": {
+    "noattachment": false,
+    "shasum": "0c794314ac0e79c905e67b5c1cc566db288a0383",
+    "size": 7158,
+    "tarball": "http://r.cnpmjs.org/kramed-markdown-renderer/download/kramed-markdown-renderer-0.1.1.tgz"
+  },
+  "homepage": "https://github.com/GitbookIO/kramed-markdown-renderer",
+  "keywords": [
+    "kramed",
+    "markdown",
+    "renderer",
+    "gitbook"
+  ],
+  "license": "Apache v2",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "aaron.omullan@gmail.com",
+      "name": "aarono"
+    }
+  ],
+  "name": "kramed-markdown-renderer",
+  "optionalDependencies": {},
+  "publish_time": 1422897436834,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitbookIO/kramed-markdown-renderer.git"
+  },
+  "scripts": {
+    "test": "export TESTING=true; mocha --reporter list"
+  },
+  "version": "0.1.1"
+}
