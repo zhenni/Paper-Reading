@@ -18,7 +18,7 @@ Paper link: [https://arxiv.org/pdf/1603.04992v2.pdf](https://arxiv.org/pdf/1603.
 
 ### Autoencoder loss
 
-- $i \in \{1 \cdots N\}$: Training instance 
+- $$i \in \{1 \cdots N\}$$: Training instance 
 - $\{I_i^i, I_2^i\}$: Rectified stereo pair 
 - $f$: focal length of the two cameras in a single pre-calibrated stereo rig, which capture the image pairs
 - $B$: horizontal distance beteen the cameras
