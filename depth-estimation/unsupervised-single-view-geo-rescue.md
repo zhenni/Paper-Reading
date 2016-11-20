@@ -18,16 +18,23 @@ Paper link: [https://arxiv.org/pdf/1603.04992v2.pdf](https://arxiv.org/pdf/1603.
 
 ### Autoencoder loss
 
-- $$i \in \{1 \cdots N\}$$: Training instance 
-- $$\{I_i^i, I_2^i\}$$: Rectified stereo pair 
-- $$f$$: focal length of the two cameras in a single pre-calibrated stereo rig, which capture the image pairs
-- $$B$$: horizontal distance beteen the cameras
-- $$d^i(x)$$: the predicted depth of a pixel $x$ in the left of the rig
-- $$D^i(x) = fB/d^i(x)$$ the motion of the pixel along the scan-line
-- $$I_w^i = I^i_2()$$ s
+- notation: $$i \in \{1 \cdots N\}$$: Training instance 
+- notation: $$\{I_i^i, I_2^i\}$$: Rectified stereo pair 
+- notation: $$f$$: focal length of the two cameras in a single pre-calibrated stereo rig, which capture the image pairs
+- notation: $$B$$: horizontal distance beteen the cameras
+- notation: $$d^i(x)$$: the predicted depth of a pixel $x$ in the left of the rig
+- notation: $$D^i(x) = fB/d^i(x)$$ the motion of the pixel along the scan-line
+- notation: $$I_w^i = I^i_2()$$  
 
 
+Inline math: $$\int_{-\infty}^\infty g(x) dx$$
 
+
+Block math:
+
+$$
+\int_{-\infty}^\infty g(x) dx
+$$
 
 
 

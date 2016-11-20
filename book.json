@@ -1,11 +1,11 @@
 {
     "plugins": [
-        "katex",
         "youtube",
         "disqus",
         "exercises",
         "tags",
-        "etoc"
+        "etoc",
+        "katex-dev"
     ],
     "pluginsConfig": {
         "disqus": {
