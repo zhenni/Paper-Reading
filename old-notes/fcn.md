@@ -1,5 +1,8 @@
 # Fully Convoluntional Networks for Segmentaion Segmentation
 
+tags: Deep Learning, Computer Vision, Segmentation, CVPR 2015
+
+
 - Talk: [url](http://techtalks.tv/talks/fully-convolutional-networks-for-semantic-segmentation/61606/)
 - pdf: [url](http://arxiv.org/abs/1411.4038)
 

@@ -1,5 +1,8 @@
 # R-CNN & Fast R-CNN & Faster R-CNN
 
+tags: Deep Learning, Computer Vision, Image Retrieval, Hashing, Survey
+
+
 ## R-CNN: Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation
 
 Paper：[http://www.cs.berkeley.edu/~rbg/#girshick2014rcnn](http://www.cs.berkeley.edu/~rbg/#girshick2014rcnn)

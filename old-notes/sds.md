@@ -1,5 +1,7 @@
 # Simultaneous Detection and Segmentation
 
+tags: Deep Learning, Computer Vision, Segmentation, Detection, ECCV 2014
+
 Paper: [http://www.eecs.berkeley.edu/Research/Projects/CS/vision/papers/BharathECCV2014.pdf](http://www.eecs.berkeley.edu/Research/Projects/CS/vision/papers/BharathECCV2014.pdf)
 
 ## Task explanation

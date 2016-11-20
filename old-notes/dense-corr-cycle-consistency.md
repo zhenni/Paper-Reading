@@ -1,5 +1,7 @@
 # Learning Dense Correspondence via 3D-guided Cycle Consistency
 
+tags: Deep Learning, Computer Vision, 3D Vision, Dense Reconstruction, CVPR 2016
+
 Paper: CVPR 2016 (Oral)
 
 Link: [https://arxiv.org/abs/1604.05383](https://arxiv.org/abs/1604.05383)

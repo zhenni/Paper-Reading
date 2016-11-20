@@ -1,5 +1,7 @@
 # Deep Hashing
 
+tags: Deep Learning, Computer Vision, Image Retrieval, Hashing, Survey
+
 Hashing BaseLine: https://github.com/willard-yuan/hashing-baseline-for-image-retrieval
 
 Some representative papers about deep hashing

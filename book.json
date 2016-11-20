@@ -3,7 +3,9 @@
         "katex",
         "youtube",
         "disqus",
-        "exercises"
+        "exercises",
+        "tags",
+        "etoc"
     ],
     "pluginsConfig": {
         "disqus": {
