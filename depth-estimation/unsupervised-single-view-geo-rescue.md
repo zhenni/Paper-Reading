@@ -24,7 +24,7 @@ Paper link: [https://arxiv.org/pdf/1603.04992v2.pdf](https://arxiv.org/pdf/1603.
 - $$B$$: horizontal distance beteen the cameras
 - $$d^i(x)$$: the predicted depth of a pixel $x$ in the left of the rig
 - $$D^i(x) = fB/d^i(x)$$ the motion of the pixel along the scan-line
-- $$I_w^i = I^i_2()$$ s
+- $$I_w^i = I^i_2()$$  
 
 
 
