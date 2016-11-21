@@ -4,8 +4,7 @@
         "disqus",
         "exercises",
         "tags",
-        "etoc",
-        "latex-codecogs"
+        "etoc"
     ],
     "pluginsConfig": {
         "disqus": {
