@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "katex",
         "youtube",
         "disqus",
         "exercises",
