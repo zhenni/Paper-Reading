@@ -4,7 +4,8 @@
         "disqus",
         "exercises",
         "tags",
-        "etoc"
+        "etoc",
+        "mathjax"
     ],
     "pluginsConfig": {
         "disqus": {
