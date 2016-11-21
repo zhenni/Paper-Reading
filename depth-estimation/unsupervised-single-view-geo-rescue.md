@@ -27,7 +27,14 @@ Paper link: [https://arxiv.org/pdf/1603.04992v2.pdf](https://arxiv.org/pdf/1603.
 - notation: $$I_w^i = I^i_2()$$  
 
 
+Inline math: $$\int_{-\infty}^\infty g(x) dx$$
 
+
+Block math:
+
+$$
+\int_{-\infty}^\infty g(x) dx
+$$
 
 
 
