@@ -11,6 +11,6 @@
     * [Learning Dense Correspondence via 3D-guided Cycle Consistency](old-notes/dense-corr-cycle-consistency.md)
 * [Depth Estimation](depth-estimation/README.md)
     * [Unsupervised CNN for Single View Depth Estimation: Geometry to the Rescue](depth-estimation/unsupervised-single-view-geo-rescue.md)
-* [GAN](GAM/README.md)
+* [GAN](GAN/README.md)
 * [Tags](tags.md)
 
