@@ -1,6 +1,8 @@
 # AdversarialNetsPapers
 The classical Papers about adversarial nets
 
+tags: Deep Learning, GAN
+
 The First paper
 --------------------------------------------
 - [ ]  [Generative Adversarial Nets] [[Paper]](https://arxiv.org/abs/1406.2661)
