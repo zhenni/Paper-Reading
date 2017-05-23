@@ -15,7 +15,8 @@
 
 1. 3D Point Cloud Representation
 2. 3D Proposal Network
-   1. parameters for one 3D box \(x, y, z, l, w, h\)
+   1. Input: bird's eye view map
+   2. parameters for one 3D box \(x, y, z, l, w, h\)
 3. s
 
 
