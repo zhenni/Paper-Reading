@@ -13,6 +13,8 @@
   * [Unsupervised CNN for Single View Depth Estimation: Geometry to the Rescue](depth-estimation/unsupervised-single-view-geo-rescue.md)
 * [GAN](GAN/README.md)
   * [GAN/Tutorial.md](/GAN/Tutorial.md)
+* [detection/README.md](/detection/README.md "Detection")
+  * [detection/MD3V.md](/detection/MD3V.md)
 * [Tags](tags.md)
 
 
