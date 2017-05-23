@@ -11,7 +11,7 @@
   * 3D object proposal generation: bird-view representation -&gt; 3D candidate boxes
   * multi-view feature fusion
 
-
+## Methods
 
 1. 3D Point Cloud Representation
 2. 3D Proposal Network
