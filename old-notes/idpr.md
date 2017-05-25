@@ -1,10 +1,6 @@
 # Articulated Pose Estimation by a Graphical Model with Image Dependent Pairwise Relations
 
-tags: Deep Learning, Computer Vision, Pose Estimation, NIPS 2014
-
-project homepage: [http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.html](http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.html)
-
-<!-- toc -->
+tags: Deep Learning, Computer Vision, Pose Estimation, NIPS 2014project homepage: [http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.html](http://www.stat.ucla.edu/~xianjie.chen/projects/pose_estimation/pose_estimation.html)<!-- toc -->
 
 
 ## Paper
