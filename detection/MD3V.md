@@ -39,12 +39,22 @@
 	* bird-eye view: discretization resolution: 0.1m -> input size: 704 x 800
 	* 64-beam Velofyne : 64 x 512 front view points ????
 	* RGB upscale -> shortest size is 500
-3. Training
+3. Training ans testing procedure
 	* end-to-end
 	* mini-batch size : 1 , sample 128 ROIs (roughly keep 25% ROIs are positive)
 	* SGD, lr=0.001, #iterations=100K => reduce => lr = 0.0001, #iterations=20K
+	* Anchor: car detection: (l, w) $\in$ {(3.9, 1.6), (1.0, 0.6), (1.6, 3.9), (0.6, 1.0)}, h = 1.56
+	* Network Architecture: 3 pooling layer, no 4th pooling; 2x deconvolution
+	* IoU overlap during training: positive anchors > 0.7; negative anchors < 0.5
+	* empty anchors: computer an integral image over the point occupancy map
+	* for non-empty anchor: nms: nms on bv boxes; not use 3D mms; IoU thresh 0.7 for nms; top 2000 boxes for training; top 300 for testing
 4. Imageset Split
 	* splits data in its own way: roughly half training and half validation
 	* follow KITTI difficult regime: easy, moderate, hard
 5. Evaluation
 	* TODO !!!!!!!!!!!!!!! 
+
+
+## Faster RCNN Tips
+
+1. https://github.com/zeyuanxy/fast-rcnn/tree/master/help/train
