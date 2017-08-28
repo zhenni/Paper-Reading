@@ -18,8 +18,8 @@
   * [R-CNN & Fast R-CNN & Faster R-CNN](old-notes/r-cnn.md)
   * [MD3V](detection/MD3V.md)
 * [pose](pose/README.md)
-  * [2D pose](pose/2D pose/README.md)
-  * [3D pose](pose/3D pose/README.md)
-    * [Towards 3D Human Pose Estimation in the Wild: a Weakly-supervised Approach](pose/3D pose/pose-hg-3d.md)
+  * [2D pose](pose/2d-pose/README.md)
+  * [3D pose](pose/3d-pose/README.md)
+    * [Towards 3D Human Pose Estimation in the Wild: a Weakly-supervised Approach](pose/3d-pose/pose-hg-3d.md)
 * [Tags](tags.md)
 
