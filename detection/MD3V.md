@@ -1,5 +1,6 @@
 # Multi-View 3D Objection Detection Network for Autonomous Driving
 
+tags: Deep Learning, Computer Vision, Detection, CVPR 2017
 ---
 
 ## Main Points:
