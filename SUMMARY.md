@@ -21,5 +21,7 @@
   * [2D pose](pose/2d-pose/README.md)
   * [3D pose](pose/3d-pose/README.md)
     * [Towards 3D Human Pose Estimation in the Wild: a Weakly-supervised Approach](pose/3d-pose/pose-hg-3d.md)
+  * [Egocentric](pose/ego/README.md)
+    * [EgoCap: Egocentric Marker-less Motion Capture with Two Fisheye Cameras](pose/ego/EgoCap.md)
 * [Tags](tags.md)
 
