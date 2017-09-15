@@ -18,14 +18,14 @@ tags: Deep Learning, Computer Vision, Detection, CVPR 2017
 	* Bird-eye view LIDAR: __height maps, density, intensity__ 
 		* 2D grid, dicretization resolution: 0.1m
 		* M-slice height maps: maximum height of the points
-		* density: normalized #points in one grid cell  $min(1.0, \frac{log(N+1)}{log(64)})$
+		* density: normalized #points in one grid cell  $$min(1.0, \frac{log(N+1)}{log(64)})$$
 		* intensity: reflectance value of the point which has the maximum height in each cell (not slice)
 	* Front-view LIDAR: __height, distance, intensity__
-		* 3D point $(x, y, z)$
-		* $p_{fv} = (r, c)$,
-		* $c = \lfloor atan2 ~ (y, x) ~ / ~  \Delta \theta \rfloor$
-		* $r = \lfloor atan2 ~ (z, \sqrt{x^2+y^2}) ~ / ~ \Delta \phi \rfloor$
-		* $\Delta \theta$ and $\Delta \phi$ : horizontal and vertical resolution 
+		* 3D point $$(x, y, z)$$
+		* $$p_{fv} = (r, c)$$,
+		* $$c = \lfloor atan2 ~ (y, x) ~ / ~  \Delta \theta \rfloor$$
+		* $$r = \lfloor atan2 ~ (z, \sqrt{x^2+y^2}) ~ / ~ \Delta \phi \rfloor$$
+		* $$\Delta \theta$$ and $$\Delta \phi$$ : horizontal and vertical resolution 
 2. 3D Proposal Network
    1. Input: bird's eye view map
    2. parameters for one 3D box \(x, y, z, l, w, h\)
@@ -44,7 +44,7 @@ tags: Deep Learning, Computer Vision, Detection, CVPR 2017
 	* end-to-end
 	* mini-batch size : 1 , sample 128 ROIs (roughly keep 25% ROIs are positive)
 	* SGD, lr=0.001, #iterations=100K => reduce => lr = 0.0001, #iterations=20K
-	* Anchor: car detection: (l, w) $\in$ {(3.9, 1.6), (1.0, 0.6), (1.6, 3.9), (0.6, 1.0)}, h = 1.56
+	* Anchor: car detection: (l, w) $$\in$$ {(3.9, 1.6), (1.0, 0.6), (1.6, 3.9), (0.6, 1.0)}, h = 1.56
 	* Network Architecture: 3 pooling layer, no 4th pooling; 2x deconvolution
 	* IoU overlap during training: positive anchors > 0.7; negative anchors < 0.5
 	* empty anchors: computer an integral image over the point occupancy map

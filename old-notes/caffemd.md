@@ -1,4 +1,14 @@
-# Notes for implementation of caffe projecttags: Deep Learning, Computer Vision, FrameworkTutorial for caffe : **[Caffe tutorial](http://caffe.berkeleyvision.org/tutorial)**### Reference* [http:\/\/demo.netfoucs.com\/danieljianfeng\/article\/details\/42929283](http://demo.netfoucs.com/danieljianfeng/article/details/42929283)* [http:\/\/www.shwley.com\/index.php\/archives\/68\/](http://www.shwley.com/index.php/archives/68/)* [http:\/\/blog.csdn.net\/tangwei2014\/](http://blog.csdn.net/tangwei2014/)* [http:\/\/zhangliliang.com\/](http://zhangliliang.com/)
+# Notes for implementation of caffe project
+
+tags: Deep Learning, Computer Vision, Framework
+
+Tutorial for caffe : 
+**[Caffe tutorial](http://caffe.berkeleyvision.org/tutorial)**
+### Reference
+* [http://demo.netfoucs.com/danieljianfeng/article/details/42929283](http://demo.netfoucs.com/danieljianfeng/article/details/42929283)
+* [http://www.shwley.com/index.php/archives/68/](http://www.shwley.com/index.php/archives/68/)
+* [http://blog.csdn.net/tangwei2014/](http://blog.csdn.net/tangwei2014/)
+* [http://zhangliliang.com/](http://zhangliliang.com/)
 
 
 
