@@ -23,8 +23,10 @@
     * [Towards 3D Human Pose Estimation in the Wild: a Weakly-supervised Approach](pose/3d-pose/pose-hg-3d.md)
   * [Egocentric](pose/ego/README.md)
     * [EgoCap: Egocentric Marker-less Motion Capture with Two Fisheye Cameras](pose/ego/EgoCap.md)
-* [SLAM]
-  * [Semantic SLAM]
+* SLAM
+  * Semantic SLAM
     * [Probabilistic Data Association for Semantic SLAM](SLAM/semantic_slam.md)
+* Tech Notes
+  * [pytorch](tech-notes/pytorch.md)
 * [Tags](tags.md)
 
