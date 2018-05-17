@@ -28,6 +28,7 @@
     * [Probabilistic Data Association for Semantic SLAM](SLAM/semantic_slam.md)
 * Transfer Learning and Domain Adaptation
   * [Domain Adaptation](transfer-adaptation/domain-adaptation.md)
+* [Visualization](visualization/README.md)
 * Tech Notes
   * [pytorch](tech-notes/pytorch.md)
 * [Tags](tags.md)

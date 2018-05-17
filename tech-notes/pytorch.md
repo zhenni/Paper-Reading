@@ -19,5 +19,8 @@ tags: Pytorch
     - Load initial net
     - modify 
       - `net_init.final._modules['4'] = nn.Conv2d(512, UAVDataset.num_classes, kernel_size=1).cuda()`
-3. s
+3. Hook [https://pytorch.org/tutorials/beginner/former_torchies/nn_tutorial.html#forward-and-backward-function-hooks](https://pytorch.org/tutorials/beginner/former_torchies/nn_tutorial.html#forward-and-backward-function-hooks)
+4. Extract Features:
+    [https://becominghuman.ai/extract-a-feature-vector-for-any-image-with-pytorch-9717561d1d4c](https://becominghuman.ai/extract-a-feature-vector-for-any-image-with-pytorch-9717561d1d4c)
+    
 
