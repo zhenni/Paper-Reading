@@ -34,3 +34,28 @@
         - The weights learned in the last tensor product layer correspond to the neuron importance weights, i.e. - importance of the feature maps for each class of interest.
         - needs a simplified architecture, and hence has to be trained again
      - Grad-CAM heat-map is a weighted combination of feature maps, but followed by a ReLU: weights: global average pooling of the feature map.
+     
+     
+     
+## Evaluation Methods
+
+1. __Region Perturbation__
+
+2. __Object Localization / Segmentation__
+    - __CAM__: 
+        - Localization Evaluation: (ILSVRC2014) bbox generation: simple thresholding by 20% of the max value and take bbox of the largest connected component. [Code](https://github.com/metalbubble/CAM/blob/master/ILSVRC_evaluate_bbox.m)
+    - __GRAD-CAM__:
+        - 15% of the max value as threshold
+        - weakly supervised segmentation
+        - Pointing-GAME: (Top-down Neural Attention by excitation Backprop)
+    - __Grad-CAM++__:
+        - Degine a IoU over the area of bounding box and the heatmap 
+        
+- Applications:
+    - __CAM__:
+         - discovering infomative objects in the scenes: SUN dataset
+         - Concept localization in weakly labeled images: hard-negative mining
+         - Weakly supervised text detector
+         - interpreting visual questin answering
+- Class-specific Units: CAM, still need to read
+    
