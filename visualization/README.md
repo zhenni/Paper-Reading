@@ -39,8 +39,18 @@
      
 ## Evaluation Methods
 
-1. __Region Perturbation__
-
+1. __Region Perturbation / Occlustion__
+    - __Deconv__: __Occlusion Experiments__: Occlude a small square patch of the input image and then apply the network to the occluded image. Sum the responses (from one channel in the layer 5.)
+    - __Evaluating the Visualization of What a Deep Nearal Network Has Learned__:
+        - Region perturbation for ordered heatmap position: How much score is decreased by the region perturbation
+    - __Grad-CAM__: Faithfulness: the ability to accurately explain the function learned by the model.
+    - __Grad-CAM++__: Defined some metrics:
+        - The capability of an explanation map in highlighting regions: occlude the parts in the unimportant region
+        - Average confidence drop percentage
+        - percentage of number of samples which confidence increase
+    - __RISE: Randomized Input Sampling for Explanation of Black-box Models__: probability AUC curves for deletion and insertion
+    - Injecting noise
+    - Rotating and translating the image
 2. __Object Localization / Segmentation__
     - __CAM__: 
         - Localization Evaluation: (ILSVRC2014) bbox generation: simple thresholding by 20% of the max value and take bbox of the largest connected component. [Code](https://github.com/metalbubble/CAM/blob/master/ILSVRC_evaluate_bbox.m)
@@ -49,13 +59,32 @@
         - weakly supervised segmentation
         - Pointing-GAME: (Top-down Neural Attention by excitation Backprop)
     - __Grad-CAM++__:
-        - Degine a IoU over the area of bounding box and the heatmap 
-        
+        - Design a IoU over the area of bounding box and the heatmap
+3. __Human Trust__:
+    - __Grad-CAM__: class discrimination
+    - __Grad-CAM++__
+4. __Learning from Explanation: Knowledge Distillation__:
+    - __Grad-CAM++__: Define student-teacher network by introducing interpretability loss, instead of or combine with the traditional distillation loss. The interpretability lossis the square of the distance between the CAM of the teacher net and the student net.
+- __Diagnosing the image classification CNNs__:
+    - __Grad-CAM__:
+        - __Analyzing failure modes for CNNs__
+        - __Effect of adversarial noise for CNNs__
+        - __Identifying bias in dataset__
+- Counterfatual Explanations:
+    - __Grad-CAM__
 - Applications:
     - __CAM__:
-         - discovering infomative objects in the scenes: SUN dataset
-         - Concept localization in weakly labeled images: hard-negative mining
-         - Weakly supervised text detector
-         - interpreting visual questin answering
+        - discovering informative objects in the scenes: SUN dataset
+        - Concept localization in weakly labeled images: hard-negative mining
+        - Weakly supervised text detector
+        - interpreting visual question answering
+    - __Grad-CAM__:
+        - Image Captioning
+        - Visual Question Answering
+    - __Grad-CAM++__:
+        - Image Captioning
+        - 3D Action Recognition
+    - __IntegratedGrad__:
+        - Retinopathy Prediction
+        - Chemistry Models
 - Class-specific Units: CAM, still need to read
-    
