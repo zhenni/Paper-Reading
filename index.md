@@ -13,7 +13,7 @@
 * [GAN](GAN/README.md)
   * [Tutorial](GAN/Tutorial.md)
 * [2D to 3D](2D to 3D/README.md)
-  * [Deep3D: Fully Automatic 2D-to-3D Video Conversion with Deep Convolutional Neural Networks](2D to 3D/[RN] Deep3D: Fully Automatic 2D-to-3D Video Conversion with Deep Convolutional Neural Networks.md)
+  * [Deep3D: Fully Automatic 2D-to-3D Video Conversion with Deep Convolutional Neural Networks](2D to 3D/ Deep3D: Fully Automatic 2D-to-3D Video Conversion with Deep Convolutional Neural Networks.md)
 * [detection](/detection/README.md)
   * [R-CNN & Fast R-CNN & Faster R-CNN](old-notes/r-cnn.md)
   * [MD3V](detection/MD3V.md)
